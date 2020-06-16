@@ -28,13 +28,22 @@ static int qsort_compare(const void * a, const void * b)
 
 
 int main (void) {
-  char test_string[] = "eke-elektroniikka";
+  char original_string[] = "eke-elektroniikka";
+  char clean_string[strlen(original_string)];
+  int i = 0, j = 0;
 
-  printf("\nAlkuperäinen merkkijono: %s", test_string);
+  // Remove illegal characters
+  memset(clean_string, 0, sizeof(clean_string));
+  for (i = 0; i < (int)strlen(original_string); i++) {
+    if(get_index_from_keystring(&original_string[i]) >= 0) {
+      clean_string[j++] = original_string[i];
+    }
+  }
 
-  qsort(test_string, strlen(test_string), sizeof(char), qsort_compare);
-
-  printf("\nLajiteltu merkkijono:    %s\n", test_string);
+  printf("\nAlkuperäinen merkkijono: %s", original_string);
+  printf("\nPuhdistettu merkkijono:  %s", clean_string);
+  qsort(clean_string, strlen(clean_string), sizeof(char), qsort_compare);
+  printf("\nLajiteltu merkkijono:    %s\n\n", clean_string);
    
   return 0;
 }
