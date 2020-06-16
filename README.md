@@ -21,3 +21,5 @@ I tested the indexing function using corner cases of the end letters of the alph
 ## Notes
 
 The original assignment text seems to contain an error, the resulting string that is presented is not correct. ("eeeertiioakkkln" is one k-letter shorter than the correct answer "eeeertiioakkkkln")
+
+Code compiles and lints without errors on  my fedora box, using gcc 9.3.1 20200408 (Red Hat 9.3.1-2) and splint 3.1.2 
