@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 /* Returns the zero-based index of input character from the key-string.
@@ -20,19 +21,20 @@ static int get_index_from_keystring(char *key)
 }
 
 
+static int qsort_compare(const void * a, const void * b)
+{
+  return (get_index_from_keystring((char *)a) - get_index_from_keystring((char *)b));
+}
+
+
 int main (void) {
   char test_string[] = "eke-elektroniikka";
 
   printf("\nAlkuperäinen merkkijono: %s", test_string);
 
-  printf("\nQ: %d", get_index_from_keystring("Q"));
-  printf("\nM: %d", get_index_from_keystring("M"));
-  printf("\nA: %d", get_index_from_keystring("A"));
-  printf("\nÖ: %d", get_index_from_keystring("Ö"));
-  printf("\nq: %d", get_index_from_keystring("q"));
-  printf("\nm: %d", get_index_from_keystring("m"));
-  printf("\na: %d", get_index_from_keystring("a"));
-  printf("\nö: %d\n", get_index_from_keystring("ö"));
-  
+  qsort(test_string, strlen(test_string), sizeof(char), qsort_compare);
+
+  printf("\nLajiteltu merkkijono:    %s\n", test_string);
+   
   return 0;
 }
