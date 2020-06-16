@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define INDEX_ERROR -1
 
 /* Returns the zero-based index of input character from the key-string.
    Returns -1 on an unknown input character */
@@ -17,7 +18,7 @@ static int get_index_from_keystring(char *key)
       return i;
     }
   }
-  return -1;
+  return INDEX_ERROR;
 }
 
 
@@ -35,7 +36,7 @@ int main (void) {
   // Remove illegal characters
   memset(clean_string, 0, sizeof(clean_string));
   for (i = 0; i < (int)strlen(original_string); i++) {
-    if(get_index_from_keystring(&original_string[i]) >= 0) {
+    if(get_index_from_keystring(&original_string[i]) != INDEX_ERROR) {
       clean_string[j++] = original_string[i];
     }
   }
