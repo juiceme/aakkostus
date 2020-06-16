@@ -1,0 +1,25 @@
+OHJELMOINTITEHTÄVÄ
+
+Tee algoritmi:
+
+Järjestä merkkijono "eke-elektroniikka" oheisen aakkosjärjestyksen mukaan.
+
+Akkostusavain on "QWERTYUIOPÅASDFGHJKLÖÄZXCVBNM" eli aakkosten ensimmäinen
+kirjain on Q ja viimeinen M.
+
+Oletettu lopputulos on "eeeertiioakkkln"
+
+[1] Kirjoita algoritmi C-kielellä tai pseudokielellä.
+
+[2] Perustele mitkä ovat ratkaisusi päänäkökohdat.
+
+[3] Mitä otat huomioon tehdessäsi ratkaisua?
+
+[4] Miten testaisit ratkaisun?
+
+[5] Paljonko käytit aikaa ratkaisun tekemiseen?
+
+Palauta vastauksesi tekstitiedostona, formaatti vapaa.
+
+
+
